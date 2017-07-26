@@ -4,7 +4,7 @@ namespace app\controllers;
 
 class PatienterController extends \yii\web\Controller
 {
-    public function actionIndex($param)
+    public function actionIndex($q)
     {
         $data = [
             ['id' => 1, 'realname' => '李珍', 'idencardnum' => '431339198010097761', 'treatmentnum' => '78901103'],
