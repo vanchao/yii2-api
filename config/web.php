@@ -4,13 +4,13 @@ $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'practical-b',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'E4F0bnV6UBGygNg5OsqrFmgwR35JzUq9',
+            'cookieValidationKey' => 'PEi6ICsok3vWiJSJJtQV2JZ6D-jk5gkh',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -39,14 +39,12 @@ $config = [
             ],
         ],
         'db' => $db,
-/* 
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
- */
     ],
     'params' => $params,
 ];

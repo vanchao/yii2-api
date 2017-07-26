@@ -1,33 +1,75 @@
-Yii 2 Basic Project Template
-============================
+Yii 2 Practical-B Application Template
+======================================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+[![Latest Stable Version](https://poser.pugx.org/kartik-v/yii2-app-practical-b/v/stable.svg)](https://packagist.org/packages/kartik-v/yii2-app-practical-b) 
+[![License](https://poser.pugx.org/kartik-v/yii2-app-practical-b/license.svg)](https://packagist.org/packages/kartik-v/yii2-app-practical-b)
+[![Total Downloads](https://poser.pugx.org/kartik-v/yii2-app-practical-b/downloads.svg)](https://packagist.org/packages/kartik-v/yii2-app-practical-b) 
+[![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-app-practical-b/d/monthly.png)](https://packagist.org/packages/kartik-v/yii2-app-practical-b)
+[![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-app-practical-b/d/daily.png)](https://packagist.org/packages/kartik-v/yii2-app-practical-b)
+
+The Yii 2 Practical-B Application Template is a skeleton Yii 2 application based on the 
+[yii2-basic template](https://github.com/yiisoft/yii2-app-basic/) best for
+rapidly creating small projects. The template allows a **practical** method to directly 
+access the application from the app root.
 
 The template contains the basic features including user login/logout and a contact page.
 It includes all commonly used configurations that would allow you to focus on adding new
 features to your application.
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
+
+Why yii2-practical-b?
+---------------------
+
+After installing a `app`, in the yii2-basic application you normally would access the
+frontend by:
+
+```
+http://domain/app/web
+```
+
+However, in many **practical** scenarios (especially on shared and single domain hosts) one 
+would want their users to directly access the app as:
+
+```
+http://domain/app
+```
+
+The `yii2-app-practical-b` enables you to achieve just that by carefully moving and rearranging the 
+bootstrap files and web components of frontend to work directly out of the app root. The 
+`web` folder is entirely eliminated and one can directly access the application frontend
+this way:
+
+```
+http://domain/app
+```
+
+All other aspects of the app configuration remain the same as the **yii2-basic** app. The original `assets` folder
+in the approot is renamed to `assets_b`, while the `web/assets` folder moves to app root.
+
+SOME KEY ADDITIONS
+-------------------
+
+1. The template has some security preconfigured for users with Apache web servers. It has a default `.htaccess` security configuration setup.
+2. The template has prettyUrl enabled by default and the changes have been made to `.htaccess` as well as `urlManager`
+   component config in the config directory.
 
 DIRECTORY STRUCTURE
 -------------------
 
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
-
-
+```
+    /                   contains the entry script and web resources
+    assets/             contains the web runtime assets
+    assets_b/           contains application assets such as JavaScript and CSS
+    commands/           contains console commands (controllers)
+    config/             contains application configurations
+    controllers/        contains Web controller classes
+    mail/               contains view files for e-mails
+    models/             contains model classes
+    runtime/            contains files generated during runtime
+    tests/              contains various tests for the yii2-practical-b application
+    vendor/             contains dependent 3rd-party packages
+    views/              contains view files for the Web application
+```
 
 REQUIREMENTS
 ------------
@@ -47,16 +89,15 @@ You can then install this project template using the following command:
 
 ~~~
 php composer.phar global require "fxp/composer-asset-plugin:^1.3.1"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
+php composer.phar create-project --prefer-dist --stability=dev kartik-v/yii2-app-practical-b practical-b
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
+Now you should be able to access the application through the following URL, assuming `practical-b` is the directory
 directly under the Web root.
 
 ~~~
-http://localhost/basic/web/
+http://localhost/practical-b
 ~~~
-
 
 ### Install from an Archive File
 
@@ -75,7 +116,7 @@ Set cookie validation key in `config/web.php` file to some random secret string:
 You can then access the application through the following URL:
 
 ~~~
-http://localhost/basic/web/
+http://localhost/practical-b/
 ~~~
 
 
@@ -100,8 +141,6 @@ return [
 - Yii won't create the database for you, this has to be done manually before you can access it.
 - Check and edit the other files in the `config/` directory to customize your application as required.
 - Refer to the README in the `tests` directory for information specific to basic application tests.
-
-
 
 TESTING
 -------
